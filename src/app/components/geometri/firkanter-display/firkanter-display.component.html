@@ -1,0 +1,43 @@
+<div style="margin: 80px 0px 0px 80px; display: flex">
+    <div>
+        <div style="width: 200px;" >
+            <select #teams (change)="onSelected(teams.value)" class="form-select" aria-label="Default select example">
+                <option default>Pick a shape</option>
+                <option>Square</option>
+                <option>Rectangle</option>
+                <option>Parallelogram</option>
+                <option>Trapezium</option>
+            </select>
+            
+        </div>
+        <div style="margin: 100px 0px 0px 0px">
+            <button type="button" class="btn btn-primary" (click)="calculateDimensions()">Calculate Dimensions</button>
+        </div>
+    </div>
+
+    <div style="margin: 0px 0px 0px 40px">
+        <div class="input-group mb-3">
+            <span class="input-group-text"> Base: </span>
+            <input [(ngModel)]="base" name="player" class="form-control">
+        </div>
+        <div *ngIf="trapSelected" class="input-group mb-3">
+            <span class="input-group-text"> Base2: </span>
+            <input [(ngModel)]="base2" type="text" class="form-control" placeholder="" aria-label="Base">          
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text"> Height: </span>
+            <input [(ngModel)]="height" type="text" class="form-control" placeholder="" aria-label="Base">          
+        </div>
+    </div>
+</div>
+<div >
+    <div style="margin: 80px 0px 0px 80px">
+        <span>Area: </span>
+        <span>{{objectArea}}</span>
+    </div>  
+    <div style="margin: 20px 0px 0px 80px">
+        <span>Perimeter: </span>
+        <span>{{objectPerimeter}}</span>
+    </div>  
+    
+</div>

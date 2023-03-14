@@ -1,0 +1,20 @@
+<div style="margin: 80px 0px 0px 80px; display: flex">
+    <div>
+        <button type="button" class="btn btn-primary" (click)="getRandomBoyBand()">Get Random Boy Band</button>
+    </div>
+    <div>
+        <div>
+            <span style="margin: 0px 0px 0px 20px; font-size: 20px">Name:    {{(observableBoyband$ | async)?.name}}</span>
+        </div>
+        <div>
+            <span style="margin: 0px 0px 0px 20px; font-size: 20px">Members: {{(observableBoyband$ | async)?.members}}</span>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!-- <div *ngIf="(participant$ | async) as partecipant">
+    {{partecipant}}
+</div> -->
