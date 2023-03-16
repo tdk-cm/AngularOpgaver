@@ -19,6 +19,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MorsePipePipe } from './morse-pipe.pipe';
 import { TextPipe } from './text.pipe';
+import { PipeShowcaseComponent } from './pipes/components/pipe-showcase/pipe-showcase.component';
+import { SlowtypePipe } from './pipes/pipes/slowtype.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { TextPipe } from './text.pipe';
     FossilBilerComponent,
     NewCardataComponent,
     MorsePipePipe,
-    TextPipe
+    TextPipe,
+    PipeShowcaseComponent,
+    SlowtypePipe
 
   ],
   imports: [

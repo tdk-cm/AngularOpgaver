@@ -1,0 +1,57 @@
+
+<div style="margin: 100px 0px 0px 100px">
+    <div style="display: flex">
+        <div style="display: flex">
+            <div style="margin: 20px 0px 0px 0px">
+                <span style="font-size: 20px;">Input: </span>
+            </div>
+            <div style="width: 600px"> <!--  left side    -->
+                <div style="width: 600px">
+                    <form [formGroup]="pipeInputForm" (ngSubmit)="onSubmit()">
+                        <div style="display: flex;  justify-content: center;">
+                            <div style="margin: 0px 0px 0px -50px"> <!-- super smart hack -->
+                                <mat-form-field appearance="fill" style="width: 500px">
+                                    <mat-label>Text to modify</mat-label>
+                                    <input matInput placeholder="Enter text here..." type="text" class="form-control" id="inputModel" 
+                                    formControlName="textInput" [class.is-invalid] = "pipeInputForm.get('textInput')!.invalid && pipeInputForm.get('textInput')!.touched" required>
+                                    <mat-error *ngIf="pipeInputForm.get('textInput')!.invalid">{{getErrorName("textInput")}}</mat-error>
+                                  </mat-form-field>
+                            </div>
+                        </div>
+                    </form>
+                </div>          
+               
+            </div>
+        </div>
+       
+        <div style="display: flex">
+            <div> <!-- RIGHT SIDE -->
+                <form [formGroup]="pipeInputForm" (ngSubmit)="onSubmit()">
+                    <div >
+                        <mat-form-field appearance="fill"  style="width: 160px">
+                            <mat-label>Pipe Type</mat-label>
+                            <select matNativeControl required formControlName="pipeType">
+                                <option *ngFor="let pipeName of validPipes;" [value]=pipeName>
+                                    {{pipeName}}
+                                </option>                  
+                              </select>
+                          </mat-form-field>
+                    </div>                 
+                </form>
+            </div>
+            <div style="margin: 12px 0px 0px 25px; width: 100px">
+                <button style="width: 100px" type="submit" class="btn btn-primary" (click)="onSubmit()" [disabled]="!pipeInputForm.valid">Go!</button>
+            </div>
+        </div>
+       
+    </div>   
+    <div style="margin: 0px 0px 0px 0px; display: flex">
+        <div style="margin: 12px 12px 0px 0px">
+            <span style="font-size: 20px;">Result: </span>
+        </div>
+        <div style="width: 1000px">
+            <input style="font-size: 24px;" [ngModel]="submittedText | text:pipeInputForm.get('pipeType')?.value"  class="form-control" type="text" placeholder="" value="" readonly >
+        </div>
+        <span>{{submittedText | slowtype }}</span>
+    </div>
+</div>

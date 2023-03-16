@@ -19,6 +19,9 @@
   <div>
     <button type="button" class="btn btn-primary" (click)="selectionMade(6)">Go to Fossil Fuel Cars</button>
   </div>
+  <div>
+    <button type="button" class="btn btn-primary" (click)="selectionMade(7)">Go to Pipes Showcase</button>
+  </div>
 </div>
 
 <div [ngSwitch]="selectedPage">
@@ -36,6 +39,9 @@
    </div>
    <div *ngSwitchCase="6">
     <app-fossil-biler></app-fossil-biler>
+   </div>
+   <div *ngSwitchCase="7">
+    <app-pipe-showcase></app-pipe-showcase>
    </div>
 </div>
 

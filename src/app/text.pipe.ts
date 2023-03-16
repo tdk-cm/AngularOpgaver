@@ -10,7 +10,7 @@ export class TextPipe implements PipeTransform {
   transform(value: string | null, args: string): unknown {
 
     if(value !== null){
-      switch(args){
+      switch(args.toLocaleLowerCase()){
         case "morse":
           return this.stringToMorse(value);
   
@@ -22,6 +22,12 @@ export class TextPipe implements PipeTransform {
   
               case "md5":
                 return this.stringToMd5(value);
+
+                case "reverse":
+                  return this.stringReverse(value);
+
+                  case "scrambled":
+                    return this.stringScramble(value);
       }
     }
    
@@ -42,6 +48,27 @@ export class TextPipe implements PipeTransform {
     }
 
     return output;
+  }
+
+  stringReverse(input: string): string {
+    var splitString = input.split(""); 
+    var reverseArray = splitString.reverse(); 
+    var joinArray = reverseArray.join(""); 
+    
+    return joinArray;
+  }
+
+  stringScramble(input: string): string {
+    let splitString: string[] = input.split("");
+
+    for(let i = splitString.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = splitString[i];
+      splitString[i] = splitString[j];
+      splitString[j] = tmp;
+  }
+  return splitString.join("");
+
   }
 
   morseToString(input: string): string {
