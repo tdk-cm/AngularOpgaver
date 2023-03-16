@@ -17,6 +17,8 @@ import { NewCardataComponent } from './fossil/components/dialog/new-cardata/new-
 import { MatDialogModule, MatDialog, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { MorsePipePipe } from './morse-pipe.pipe';
+import { TextPipe } from './text.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     DagensJokeComponent,
     CarsListingComponent,
     FossilBilerComponent,
-    NewCardataComponent
+    NewCardataComponent,
+    MorsePipePipe,
+    TextPipe
 
   ],
   imports: [
