@@ -1,0 +1,76 @@
+<div >
+    <div style="justify-content: center; text-align: center;">
+        <h2>Input data</h2>
+    </div>
+    <div>
+        <form [formGroup]="carInputform" (ngSubmit)="onSubmit()">
+            <div style="display: flex;  justify-content: center;">
+                <div >
+                    <mat-form-field appearance="fill">
+                        <mat-label>Rank</mat-label>
+                        <select matNativeControl required formControlName="rank">
+                            <option *ngFor="let number of currentRanks; let i = index" [value]=i+1>
+                                {{i + 1}}
+                            </option>
+                            <option [value]="0" [selected]>
+                                Last
+                            </option>
+                          </select>
+                      </mat-form-field>
+                </div>
+                <ng-template #lastRankSelector>
+                    <div>
+                        h
+                    </div>
+                </ng-template>
+                <div style="margin: 0px 0px 0px 20px">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Car Model</mat-label>
+                        <input matInput placeholder="Enter Model Name..." type="text" class="form-control" id="inputModel" 
+                        formControlName="modelName" [class.is-invalid] = "carInputform.get('modelName')!.invalid && carInputform.get('modelName')!.touched" required>
+                        <mat-error *ngIf="carInputform.get('modelName')!.invalid">{{getErrorName("modelName")}}</mat-error>
+                      </mat-form-field>
+                </div>
+            </div>
+            <div style="display: flex; margin: 15px 0px 0px 0px; justify-content: center;">
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Quantity</mat-label>
+                        <input matInput placeholder="Enter Quantity..." type="text" class="form-control" id="inputQuantity" 
+                        formControlName="quantity" [class.is-invalid] = "carInputform.get('quantity')!.invalid && carInputform.get('quantity')!.touched" required>
+                        <mat-error *ngIf="carInputform.get('quantity')!.invalid">{{getErrorName("quantity")}}</mat-error>
+                      </mat-form-field>
+                </div>
+                <div style="display:flex">
+                    <div style="margin: 0px 0px 0px 20px">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Variance</mat-label>
+                            <input matInput placeholder="Enter Variance..." type="text" class="form-control" id="inputVariance" 
+                            formControlName="variance" [class.is-invalid] = "carInputform.get('variance')!.invalid && carInputform.get('variance')!.touched" required>
+                            <mat-error *ngIf="carInputform.get('variance')!.invalid">{{getErrorName("variance")}}</mat-error>
+                          </mat-form-field>
+                    </div>
+                    <span style="font-size: 24px; margin-top: 10%;">%</span>
+                </div>
+              
+            </div>
+            <!-- <input type="text" id="carModel" formControlName="modelName"> -->
+           
+             
+        </form>
+    </div>   
+    <div style="display: flex;  justify-content: center;">
+        <div>
+            <button type="submit" class="btn btn-primary" (click)="onSubmit()" [disabled]="!carInputform.valid">Submit</button>
+
+        </div>
+        <div style="margin: 0px 0px 0px 40px">
+            <button type="button" class="btn btn-primary" (click)="cancelOperation()">Cancel</button>
+        </div>
+    </div>
+    <!-- <form #carInputform="ngForm" (ngSubmit)="onSubmit()">
+
+    </form> -->
+
+   
+</div>

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 class CarListingDetails {
-  carModel: string;
-  quantity: string;
-  variance: string;
+  carModel: string | null;
+  quantity: string | number | null;
+  variance: string | number | null;
 
   constructor(model: string, quantity: string, variance: string){
     this.carModel = model;

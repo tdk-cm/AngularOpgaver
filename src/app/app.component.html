@@ -14,7 +14,10 @@
     <button type="button" class="btn btn-primary" (click)="selectionMade(4)">Go to Daily Joke</button>
   </div>
   <div>
-    <button type="button" class="btn btn-primary" (click)="selectionMade(5)">Go to Cars</button>
+    <button type="button" class="btn btn-primary" (click)="selectionMade(5)">Go to Electric Cars</button>
+  </div>
+  <div>
+    <button type="button" class="btn btn-primary" (click)="selectionMade(6)">Go to Fossil Fuel Cars</button>
   </div>
 </div>
 
@@ -30,6 +33,9 @@
   </div>
   <div *ngSwitchCase="5">
     <app-cars-listing></app-cars-listing>
+   </div>
+   <div *ngSwitchCase="6">
+    <app-fossil-biler></app-fossil-biler>
    </div>
 </div>
 

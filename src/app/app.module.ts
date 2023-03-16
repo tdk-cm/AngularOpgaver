@@ -6,11 +6,17 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SideCammeratComponent } from './side-cammerat/side-cammerat.component';
 import { FirkanterDisplayComponent } from './components/geometri/firkanter-display/firkanter-display.component';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BindingsExamplesComponent } from './bindings-examples/bindings-examples.component';
 import { ObservableEnvironmentComponent } from './observable-environment/observable-environment.component';
 import { DagensJokeComponent } from './jokes/components/dagens-joke/dagens-joke.component';
 import { CarsListingComponent } from './cars/components/cars-listing/cars-listing.component';
+import { FossilBilerComponent } from './fossil/components/fossil-biler/fossil-biler.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NewCardataComponent } from './fossil/components/dialog/new-cardata/new-cardata.component';
+import { MatDialogModule, MatDialog, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -20,15 +26,24 @@ import { CarsListingComponent } from './cars/components/cars-listing/cars-listin
     BindingsExamplesComponent,
     ObservableEnvironmentComponent,
     DagensJokeComponent,
-    CarsListingComponent
+    CarsListingComponent,
+    FossilBilerComponent,
+    NewCardataComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    NoopAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule    
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
