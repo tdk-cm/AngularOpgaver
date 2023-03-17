@@ -31,6 +31,9 @@ export class TextPipe implements PipeTransform {
                     
                     case "ascii":
                       return this.stringToAscii(value);
+
+                      case "binary":
+                        return this.stringToBinary(value);
       }
     }
    
@@ -53,7 +56,29 @@ export class TextPipe implements PipeTransform {
     return output;
   }
 
+  stringToBinary(input: string) {
+    let asciiArray: number[] = this.stringToAsciiArray(input);
+    let output: string = "";
+
+    for (let i = 0; i < asciiArray.length; i++) {
+      output += (asciiArray[i] >>> 0).toString(2) + " ";
+            
+    }
+
+    return output;
+  }
+
   
+stringToAsciiArray(input: string): number[] {
+  let charArray: number[] = [];
+
+    for (let i = 0; i < input.length; i++) {
+      charArray.push(input.charCodeAt(i));
+    }
+
+    return charArray;
+}
+
   stringToAscii(input: string): string {
     let charArray: number[] = [];
     let output: string = '';
