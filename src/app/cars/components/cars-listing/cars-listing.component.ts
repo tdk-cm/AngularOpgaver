@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Routes, Router } from '@angular/router';
+
 
 class CarListingDetails {
   carModel: string | null;
@@ -22,7 +24,7 @@ export class CarsListingComponent {
 
   carData: CarListingDetails[] = [];
 
-  constructor(){
+  constructor(public router: Router){
 
     this.carData.push(new CarListingDetails("Citroën C3",	"2.268",	"-27%"));
     this.carData.push(new CarListingDetails("Peugeot 208",	"2.107",	"-24%"));

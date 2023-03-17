@@ -1,47 +1,23 @@
-<!-- <div style="display: flex">
-  <button type="button" class="btn btn-primary">Primary</button>
-  <button type="button" class="btn btn-primary">Primary</button>
-  <button type="button" class="btn btn-primary">Primary</button>
-</div> -->
 <div class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div>
-    <button type="button" class="btn btn-primary" (click)="selectionMade(1)">Go to Geometri</button>
+    <button type="button" class="btn btn-primary" (click)="router.navigate(['/geometri']);">Go to Geometri</button>
   </div>
   <div>
-    <button type="button" class="btn btn-primary" (click)="selectionMade(3)">Go to Observables</button>
+    <button type="button" class="btn btn-primary" (click)="router.navigate(['/observable']);">Go to Observables</button>
   </div>
   <div>
-    <button type="button" class="btn btn-primary" (click)="selectionMade(4)">Go to Daily Joke</button>
+    <button type="button" class="btn btn-primary" (click)="router.navigate(['/jokes']);">Go to Daily Joke</button>
   </div>
   <div>
-    <button type="button" class="btn btn-primary" (click)="selectionMade(5)">Go to Electric Cars</button>
+    <button type="button" class="btn btn-primary" (click)="router.navigate(['/elbiler']);">Go to Electric Cars</button>
   </div>
   <div>
-    <button type="button" class="btn btn-primary" (click)="selectionMade(6)">Go to Fossil Fuel Cars</button>
+    <button type="button" class="btn btn-primary" (click)="router.navigate(['/fossilbiler']);">Go to Fossil Fuel Cars</button>
   </div>
   <div>
-    <button type="button" class="btn btn-primary" (click)="selectionMade(7)">Go to Pipes Showcase</button>
+    <button type="button" class="btn btn-primary" (click)="router.navigate(['/pipes']);">Go to Pipes Showcase</button>
   </div>
 </div>
 
-<div [ngSwitch]="selectedPage">
-  <div *ngSwitchCase="1">
-    <app-firkanter-display></app-firkanter-display>
-  </div>
-  <div *ngSwitchCase="3">
-    <app-observable-environment></app-observable-environment>
-  </div>
-  <div *ngSwitchCase="4">
-   <app-dagens-joke></app-dagens-joke>
-  </div>
-  <div *ngSwitchCase="5">
-    <app-cars-listing></app-cars-listing>
-   </div>
-   <div *ngSwitchCase="6">
-    <app-fossil-biler></app-fossil-biler>
-   </div>
-   <div *ngSwitchCase="7">
-    <app-pipe-showcase></app-pipe-showcase>
-   </div>
-</div>
-
+<router-outlet></router-outlet>
+<router-outlet name="cardetails"></router-outlet>

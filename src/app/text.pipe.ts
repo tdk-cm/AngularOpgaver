@@ -28,6 +28,9 @@ export class TextPipe implements PipeTransform {
 
                   case "scrambled":
                     return this.stringScramble(value);
+                    
+                    case "ascii":
+                      return this.stringToAscii(value);
       }
     }
    
@@ -45,6 +48,23 @@ export class TextPipe implements PipeTransform {
           output += letterToMorse.get(input[i])
         }
       }
+    }
+
+    return output;
+  }
+
+  
+  stringToAscii(input: string): string {
+    let charArray: number[] = [];
+    let output: string = '';
+
+    for (let i = 0; i < input.length; i++) {
+      charArray.push(input.charCodeAt(i));
+    }
+
+    for (let i = 0; i < charArray.length; i++) {
+      output += charArray[i].toLocaleString() + ' ';
+      
     }
 
     return output;

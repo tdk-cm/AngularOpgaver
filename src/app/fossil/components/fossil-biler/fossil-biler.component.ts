@@ -6,6 +6,7 @@ import { FossilServiceService } from '../../services/fossil-service.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 import { NewCardataComponent } from '../dialog/new-cardata/new-cardata.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-fossil-biler',
@@ -16,7 +17,7 @@ export class FossilBilerComponent {
 
   carDetails$: Observable<FossilCarListingData[]> | undefined;
 
-  constructor(private fossilService : FossilServiceService, private dialog: MatDialog){    
+  constructor(private fossilService : FossilServiceService, private dialog: MatDialog, public router: Router){    
     this.fossilService.carListing$.subscribe((data: FossilCarListingData[]) => {
       next: {
         this.carDetails$ =  of(data);

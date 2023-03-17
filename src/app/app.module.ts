@@ -21,6 +21,7 @@ import { MorsePipePipe } from './morse-pipe.pipe';
 import { TextPipe } from './text.pipe';
 import { PipeShowcaseComponent } from './pipes/components/pipe-showcase/pipe-showcase.component';
 import { SlowtypePipe } from './pipes/pipes/slowtype.pipe';
+import { CarLigstingDetailComponent } from './car-ligsting-detail/car-ligsting-detail.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SlowtypePipe } from './pipes/pipes/slowtype.pipe';
     MorsePipePipe,
     TextPipe,
     PipeShowcaseComponent,
-    SlowtypePipe
+    SlowtypePipe,
+    CarLigstingDetailComponent
 
   ],
   imports: [

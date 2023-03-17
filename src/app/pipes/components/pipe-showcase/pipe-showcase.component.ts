@@ -28,6 +28,7 @@ export class PipeShowcaseComponent {
     this.validPipes.push("Italian");
     this.validPipes.push("Reverse");
     this.validPipes.push("Scrambled");
+    this.validPipes.push("Ascii");
 
   }
 

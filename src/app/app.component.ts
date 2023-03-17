@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'testApp';
   selectedPage = 1;
+
+  constructor(public router: Router) {
+
+  }
 
   selectionMade(id: number){
     this.selectedPage = id;
